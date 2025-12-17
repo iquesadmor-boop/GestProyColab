@@ -83,7 +83,6 @@ public class App {
 
     private void mostrarProyectos() {
         // TODO 14: Mostrar proyectos
-
     }
 
 }
