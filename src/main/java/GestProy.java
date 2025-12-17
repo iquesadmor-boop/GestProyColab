@@ -94,7 +94,8 @@ public class GestProy {
     public void mostrarProyectos() {
         // TODO 36: Mostrar los proyectos junto con su número de proyecto utilizando un bucle
         for (int i = 0; i < proyectos.length; i++) {
-
+            System.out.print(i);
+            System.out.print(proyectos[i].toString());
         }
 
 
