@@ -67,14 +67,12 @@ public class GestProy {
 
     public int addProyectoNuevo(String nombreProyecto, int presupuesto) {
         // TODO 34: Agregar el proyecto si hay hueco utilizando un bucle
-
-
-
-
-
-
-
-
+        for (int i = 0; i < proyectos.length; i++) {
+            if (proyectos[i] == null){
+                proyectos[i] = new Proyecto(nombreProyecto,presupuesto);
+                return i;
+            }
+        }
         return 0;
     }
 
