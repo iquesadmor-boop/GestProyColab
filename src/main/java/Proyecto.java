@@ -6,13 +6,16 @@ public class Proyecto {
     private int presupuesto;
 
     // region constructores
-    public Proyecto(String nombre){
+    public Proyecto(String nombre) {
         // TODO 41: Constructor 1 Proyecto
+        this.nombre = nombre;
 
     }
+
     public Proyecto(String nombre, int presupuesto) {
         // TODO 42: Constructor 2 Proyecto
-
+        this.nombre = nombre;
+        this.presupuesto = presupuesto;
     }
     // endregion
 
@@ -63,9 +66,10 @@ public class Proyecto {
     public void setLider(int numeroParticipante) {
         equipo.setLider(numeroParticipante);
     }
+
     public void mostrarEquipo() {
         // TODO 43: Mostrar el equipo
-
+        equipo.mostrar();
     }
 
     public String toString() {
@@ -78,10 +82,9 @@ public class Proyecto {
         // |                   |        |         |            |         |         |
         // CartasCoches        Aitor             10 h.      1300      1200      -100
         Trabajador lider = equipo.getLider();
+        int diferencia = (getPrecio()-presupuesto);
 
-
-
-        return "";
+        return String.format("%-20s%-10s%10d h.%10d%10d%10d", nombre, lider, horas, getPrecio(), presupuesto, diferencia);
     }
 
 }
