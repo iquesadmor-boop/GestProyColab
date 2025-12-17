@@ -53,15 +53,16 @@ public class GestProy {
         return n;
     }
 
-    public boolean addHorasProyecto(int numeroProyecto, int numeroHoras) {
+    public boolean addHorasProyecto(String nombreProyecto, int numeroHoras) {
         // TODO 33: Añadir horas al número de proyecto indicado
         // Si el proyecto no existe devolver false, sino true tras asignar las horas
-
-
-
-
-
-        return true;
+        for (int i = 0; i < proyectos.length; i++) {
+            if(proyectos[i].getNombre().equalsIgnoreCase(nombreProyecto)){
+                proyectos[i].setHoras(numeroHoras);
+                return true;
+            }
+        }
+        return false;
     }
 
     public int addProyectoNuevo(String nombreProyecto, int presupuesto) {
