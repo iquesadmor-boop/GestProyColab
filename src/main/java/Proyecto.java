@@ -7,13 +7,11 @@ public class Proyecto {
 
     // region constructores
     public Proyecto(String nombre) {
-        // TODO 41: Constructor 1 Proyecto
         this.nombre = nombre;
 
     }
 
     public Proyecto(String nombre, int presupuesto) {
-        // TODO 42: Constructor 2 Proyecto
         this.nombre = nombre;
         this.presupuesto = presupuesto;
     }
@@ -68,12 +66,10 @@ public class Proyecto {
     }
 
     public void mostrarEquipo() {
-        // TODO 43: Mostrar el equipo
         equipo.mostrar();
     }
 
     public String toString() {
-        // TODO 44: Mostrar la información del proyecto según el formato dado utilizando String.format
         // 20 huecos para el nombre del proyecto y 10 para el nombre del líder alineados a la izquierda
         // 10 huecos para cada número entero alineados a la derecha. Después de las horas poner " h."
         // los tres últimos valores se corresponden con el precio de coste, el presupuesto y la diferencia
