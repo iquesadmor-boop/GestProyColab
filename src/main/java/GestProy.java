@@ -106,10 +106,9 @@ public class GestProy {
 
     public void mostrarEquipoProyecto(int numProyecto) {
         // TODO 37: Mostrar el equipo si existe
-
-
-
-
+        if (proyectos[numProyecto - 1] != null){
+                proyectos[numProyecto - 1].mostrarEquipo();
+        }
     }
 
     public void setLiderProyecto(int numProyecto, int numParticipante) {
