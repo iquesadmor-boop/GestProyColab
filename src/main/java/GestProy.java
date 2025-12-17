@@ -80,20 +80,22 @@ public class GestProy {
         // TODO 35: Añadir al proyecto el participante validando que el proyecto y el trabajador existe
         // si el trababajador o proyecto no existe devolver false
         // si el proyecto y el trabajador existen pero no admiten más trabajadores devolver false
-
-
-
-
-
-
-
-
+        if (numProyecto < 1 || numProyecto > 10){
+            return false;
+        }
+        Proyecto p = proyectos[numProyecto - 1];
+        if (p == null){
+            return false;
+        }
+        p.addParticipante(Trabajadores.getTrabajador(numTrabajador));
         return true;
     }
 
     public void mostrarProyectos() {
         // TODO 36: Mostrar los proyectos junto con su número de proyecto utilizando un bucle
+        for (int i = 0; i < proyectos.length; i++) {
 
+        }
 
 
 
