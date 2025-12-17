@@ -40,7 +40,8 @@ public class Trabajador {
         // 10 espacios para el nombre alineado a la izquierda seguido de su precio hora espacio y "E." utilizando format
         // 123456789012345678901234567890
         // Aitor     90 E.
-        return "";
+        String s = String.format("%-10s, %d E.", nombre,getPrecioHora());
+        return s;
     }
 
 }
