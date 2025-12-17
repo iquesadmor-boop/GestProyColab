@@ -2,28 +2,24 @@ public class Equipo {
 
     private Trabajador lider;
 
-    private Trabajador participante1;
-    private Trabajador participante2;
-    private Trabajador participante3;
+    private Trabajador[] participantes = new Trabajador[8];
+
+    private int numParticipantes = 0;
 
     public int getMaxNumeroParticipantes() {
         return Ctes.MAX_NUM_PARTICIPANTES_EQUIPO;
     }
 
     public Trabajador getParticipante(int numero) {
-        switch (numero) {
-            case 1: return participante1;
-            case 2: return participante2;
-            case 3: return participante3;
+        if (numero > 0 && numero <= participantes.length) {
+            return participantes[numero - 1];
         }
         return null;
     }
 
     public void setParticipante(int numero, Trabajador trabajador) {
-        switch (numero) {
-            case 1: participante1 = trabajador; break;
-            case 2: participante2 = trabajador; break;
-            case 3: participante3 = trabajador; break;
+        if (numero > 0 && numero <= participantes.length) {
+            participantes[numero - 1] = trabajador;
         }
     }
 
@@ -49,8 +45,8 @@ public class Equipo {
     public int getNumeroParticipantes() {
         // TODO 24: Calcular el número de participantes utilizando un bucle
         int num = 0;
-        for (int i = 0; i < Ctes.MAX_NUM_PARTICIPANTES_EQUIPO; i++) {
-            if (getParticipante(i) != null) {
+        for (int i = 0; i < participantes.length; i++) {
+            if (participantes[i] != null) {
                 num++;
             }
         }
@@ -63,36 +59,29 @@ public class Equipo {
 
     public boolean addParticipante(Trabajador trabajador) {
         // TODO 25: Agregar un trabajador como participante si no se ha llegado al límite utilizando un bucle
-
-
-
-
-
-
-
+        if (!estaEquipoCompleto()) {
+            for (int i = 0; i < participantes.length; i++) {
+                if (participantes[i] == null) {
+                    setParticipante(i, trabajador);
+                }
+            }
+        }
         return false;
     }
 
     public void mostrar() {
         // TODO 26: Mostrar los participantes del equipo junto con su número de participante utilizando un bucle
-
-
-
-
-
-
+        for (int i = 0; i < participantes.length; i++) {
+            System.out.println(getParticipante(i) + " " + i + "\n");
+        }
     }
 
     public int getPrecioHora() {
         int precio = 0;
         // TODO 27: Calcular el precio de la hora de todos los participantes del equipo utilizando un bucle
-
-
-
-
-
-
+        for (int i = 0; i < participantes.length; i++) {
+            precio += participantes[i].getPrecioHora();
+        }
         return precio;
     }
-
 }
