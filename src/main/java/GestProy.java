@@ -43,38 +43,36 @@ public class GestProy {
     }
 
     public int getCantidadProyectosActivos() {
-        int cantidad = 0;
         // TODO 32: Contar el número de proyectos activos utilizando un bucle
-
-
-
-
-
-
-        return cantidad;
+        int n = 0;
+        for (int i = 0; i < proyectos.length; i++) {
+            if (proyectos[i] != null){
+                n ++;
+            }
+        }
+        return n;
     }
 
-    public boolean addHorasProyecto(int numeroProyecto, int numeroHoras) {
+    public boolean addHorasProyecto(String nombreProyecto, int numeroHoras) {
         // TODO 33: Añadir horas al número de proyecto indicado
         // Si el proyecto no existe devolver false, sino true tras asignar las horas
-
-
-
-
-
-        return true;
+        for (int i = 0; i < proyectos.length; i++) {
+            if(proyectos[i].getNombre().equalsIgnoreCase(nombreProyecto)){
+                proyectos[i].setHoras(numeroHoras);
+                return true;
+            }
+        }
+        return false;
     }
 
     public int addProyectoNuevo(String nombreProyecto, int presupuesto) {
         // TODO 34: Agregar el proyecto si hay hueco utilizando un bucle
-
-
-
-
-
-
-
-
+        for (int i = 0; i < proyectos.length; i++) {
+            if (proyectos[i] == null){
+                proyectos[i] = new Proyecto(nombreProyecto,presupuesto);
+                return i;
+            }
+        }
         return 0;
     }
 
