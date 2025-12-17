@@ -26,7 +26,7 @@ public class Trabajadores {
     }
 
     public static void mostrar() {
-        // TODO 61: Mostrar la información del trabajador según el formato dado utilizando printf
+        // TODOHECHO: Mostrar la información del trabajador según el formato dado utilizando printf
         // 2 espacios para el número del trabajador, luego un punto, un espacio y la representación del trabajador
         // 12345678901234567890
         //  1. Aitor     90 E.
@@ -43,11 +43,5 @@ public class Trabajadores {
                     trabajadores[i].getNombre(),
                     trabajadores[i].getPrecioHora());
         }
-
-
-    }
-
-    public static void main(String[] args) {
-        mostrar();
     }
 }
