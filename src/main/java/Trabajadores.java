@@ -1,5 +1,16 @@
 public class Trabajadores {
 
+    private static Trabajador[] trabajadores = {
+            new Trabajador("Aitor", 2),
+            new Trabajador("Alba", 2),
+            new Trabajador("Ander", 1),
+            new Trabajador("Laura", 1),
+            new Trabajador("Nerea", 1),
+            new Trabajador("Edurne", 0),
+            new Trabajador("Tasio", 0),
+            new Trabajador("Iosu", 0)
+    };
+
     public static Trabajador getTrabajador(int numero) {
         switch (numero) {
             case 1: return new Trabajador("Aitor", 2);
@@ -15,7 +26,7 @@ public class Trabajadores {
     }
 
     public static void mostrar() {
-        // TODO 61: Mostrar la información del trabajador según el formato dado utilizando printf
+        // TODOHECHO: Mostrar la información del trabajador según el formato dado utilizando printf
         // 2 espacios para el número del trabajador, luego un punto, un espacio y la representación del trabajador
         // 12345678901234567890
         //  1. Aitor     90 E.
@@ -27,8 +38,10 @@ public class Trabajadores {
         //  7. Tasio     20 E.
         //  8. Iosu      20 E.
 
-
-
+        for (int i = 0; i < trabajadores.length; i++) {
+            System.out.printf("%-10s %2d E.\n",
+                    trabajadores[i].getNombre(),
+                    trabajadores[i].getPrecioHora());
+        }
     }
-
 }
